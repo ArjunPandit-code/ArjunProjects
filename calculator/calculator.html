@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="heading-container">
+            
+                <pre class="heading">
+                 CALCULATOR
+               MADE BY ARJUN
+                </pre>
+               
+         
+        </div>
+        <div class="container">
+            <input  type="text" id="input" readonly>
+            <div class="btn-container">
+            <button class="btn" onclick="currentvalue+=1;
+             document.querySelector('#input').value=currentvalue;">1</button>
+            <button class="btn" onclick="currentvalue+=2;
+             document.querySelector('#input').value=currentvalue;">2</button>
+            <button class="btn"  onclick="currentvalue+=3;
+             document.querySelector('#input').value=currentvalue;">3</button>
+            <button class="btn"  onclick="currentvalue+=4;
+             document.querySelector('#input').value=currentvalue;">4</button>
+            <button class="btn"  onclick="currentvalue+=5;
+             document.querySelector('#input').value=currentvalue;">5</button>
+            <button class="btn"  onclick="currentvalue+=6;
+             document.querySelector('#input').value=currentvalue;">6</button>
+            <button class="btn"  onclick="currentvalue+=7;
+             document.querySelector('#input').value=currentvalue;">7</button>
+            <button class="btn"  onclick="currentvalue+=8;
+             document.querySelector('#input').value=currentvalue;">8</button>
+            <button class="btn"  onclick="currentvalue+=9;
+             document.querySelector('#input').value=currentvalue;">9</button>
+            <button class="btn"  onclick="currentvalue+=0;
+             document.querySelector('#input').value=currentvalue;">0</button>
+            <button class="btn"  onclick="currentvalue+='+';
+             document.querySelector('#input').value=currentvalue;">+</button>
+            <button class="btn"  onclick="currentvalue+='-';
+             document.querySelector('#input').value=currentvalue;">-</button>
+            <button class="btn"  onclick="currentvalue+='*';
+             document.querySelector('#input').value=currentvalue;">*</button>
+            <button class="btn"  onclick="currentvalue+='/';
+             document.querySelector('#input').value=currentvalue;">/</button>
+            <button class="btn"  onclick="currentvalue+='.';
+             document.querySelector('#input').value=currentvalue;">.</button>
+            <button class="btn"  onclick="currentvalue=eval(currentvalue);
+             document.querySelector('#input').value=currentvalue;">=</button>
+            <button class="btn"  onclick="currentvalue='';
+             document.querySelector('#input').value=currentvalue;">c</button>
+            </div>
+        </div>
+
+        <script>
+            let currentvalue='';
+            document.querySelector('#input').value=currentvalue;
+        </script>
+    </body>
+</html>
