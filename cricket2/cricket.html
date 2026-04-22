@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+    
+        <div id="container">
+        <h1 class="heading" >Rock Paper Scissor </h1>
+            <div id="btn-container">
+        <button class="btn" onclick="let computerMove=computerChoice();
+        matchResult('rock',computerMove);">Rock</button>
+
+          <button class="btn" onclick=" computerMove=computerChoice();
+        matchResult('rock',computerMove);">Paper</button>
+
+        <button class="btn" onclick="computerMove=computerChoice();
+        matchResult('rock',computerMove);">Scissor</button>
+               </div>
+        </div>
+
+        <script>
+            let gameSummary = {
+             win:0,
+             loss:0,
+             draw:0,
+            }
+            function computerChoice(){
+                let computerChoice;
+                computerChoice=Math.floor(Math.random()*3);
+                if(computerChoice==0){
+                    return 'rock';
+                }else if(computerChoice==1){
+                        return'paper';
+                }else if(computerChoice==2){
+                    return 'scissor';
+                }  
+            }
+            function matchResult(userChoice,computerChoice){
+                if(userChoice==='rock'){
+                    if(computerChoice==='rock'){
+                        gameSummary.draw++; 
+                        alert('match is draw, ' +'your choice is : '+userChoice+' , computer choice is : '+ computerChoice +'\n'+JSON.stringify(gameSummary));
+                    }else if(computerChoice==='paper'){
+                        gameSummary.loss++;
+                        alert('you loss, ' +'your choice is : '+userChoice+' , computer choice is : '+ computerChoice +'\n'+JSON.stringify(gameSummary));
+                                               
+                    }else if(computerChoice==='scissor'){
+                          gameSummary.win++;
+                        alert ('you won, '  +'your choice is : '+userChoice+' , computer choice is : '+ computerChoice +'\n'+JSON.stringify(gameSummary))                  
+                    }
+                }else if(userChoice==='paper'){
+                     if(computerChoice==='rock'){
+                          gameSummary.win++;
+                       alert('you won, ' +'your choice is : '+userChoice+' , computer choice is : '+ computerChoice +'\n'+JSON.stringify(gameSummary));               
+                    }else if(computerChoice==='paper'){
+                         gameSummary.draw++;
+                        alert('match is draw, ' +'your choice is : '+userChoice+' , computer choice is  : '+ computerChoice +'\n'+JSON.stringify(gameSummary));               
+                    }else if(computerChoice==='scissor'){
+                         gameSummary.loss++;
+                       alert('you loss, ' +'your choice is : '+userChoice+' , computer choice is : '+ computerChoice +'\n'+JSON.stringify(gameSummary));        
+                    }
+                }else if(userChoice==='scissor'){
+                     if(computerChoice==='rock'){
+                        alert('you loss, ' +'your choice is : '+userChoice+' , computer choice is : '+ computerChoice +'\n'+JSON.stringify(gameSummary));
+                        gameSummary.loss++;
+                    }else if(computerChoice==='paper'){
+                        gameSummary.win++; 
+                        alert('you won, ' +'your choice is : '+userChoice+' , computer choice is : '+ computerChoice +'\n'+JSON.stringify(gameSummary));                       
+                    }else if(computerChoice==='scissor'){
+                        gameSummary.draw++;
+                        alert('Match is draw, ' +'your choice is : '+userChoice+' , computer choice is : '+ computerChoice +'\n'+JSON.stringify(gameSummary));                    
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
